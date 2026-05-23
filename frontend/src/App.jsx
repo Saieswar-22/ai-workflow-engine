@@ -5,6 +5,8 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
+import CreateWorkflow from './pages/CreateWorkflow';
+import WorkflowDetails from './pages/WorkflowDetails';
 
 function App() {
   return (
@@ -19,6 +21,22 @@ function App() {
             element={
               <ProtectedRoute>
                 <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/workflows/create"
+            element={
+              <ProtectedRoute>
+                <CreateWorkflow />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/workflows/:id"
+            element={
+              <ProtectedRoute>
+                <WorkflowDetails />
               </ProtectedRoute>
             }
           />
